@@ -1,0 +1,9 @@
+# Same seven physics penalties everywhere, equal weight. This is the setup the
+# previous study already found didn't help -- kept as the comparison point.
+arm: uniform_physics
+loss:
+  constraints: [trend_alignment, temp_gated_trend, melt_response,
+                antecedent_wetness, adaptive_lag, volume_plausibility,
+                nonneg_monotone]
+  weighting: uniform
+  lam: 0.01

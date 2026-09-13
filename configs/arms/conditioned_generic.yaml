@@ -1,0 +1,7 @@
+# Same generic penalty, but scaled per basin the way conditioned_physics is.
+# Isolates "conditioning helps" from "physics helps".
+arm: conditioned_generic
+loss:
+  constraints: [smoothness]
+  weighting: conditioned
+  lam: 0.1

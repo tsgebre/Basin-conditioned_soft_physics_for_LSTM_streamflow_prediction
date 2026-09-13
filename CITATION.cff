@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it using the metadata below."
+type: software
+title: "Basin-conditioned soft physics for LSTM streamflow prediction"
+version: 1.0.0
+license: MIT
+abstract: >-
+  Reference implementation of the per-basin training code for a pre-registered
+  test of attribute-conditioned soft physical constraints for LSTM streamflow
+  prediction under simulated gauge outages: the LSTM, seven soft-physics
+  penalties and a smoothness control, the basin-attribute weighting, contiguous
+  outage masks, and a command-line entry point with a synthetic-data smoke test.
+keywords:
+  - physics-informed machine learning
+  - streamflow prediction
+  - LSTM
+  - missing data
+  - hydrology
+authors:
+  - family-names: Gebre
+    given-names: Tewodros Syum
+    orcid: 0000-0002-6355-0916

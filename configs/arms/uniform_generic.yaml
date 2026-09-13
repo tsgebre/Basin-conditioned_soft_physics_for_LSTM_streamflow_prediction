@@ -1,0 +1,8 @@
+# Strength-matched control: a penalty with no physics in it (second-difference
+# smoothness). If this helps as much as the physics arms, the physics wasn't
+# what was helping.
+arm: uniform_generic
+loss:
+  constraints: [smoothness]
+  weighting: uniform
+  lam: 0.01

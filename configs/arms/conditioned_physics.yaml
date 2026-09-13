@@ -1,0 +1,11 @@
+# The hypothesis under test: same seven penalties, but weights derived from what
+# the catchment IS. Snowy basins weight melt; arid basins weight volume. Weights
+# are normalised to the same total budget as uniform_physics, so the arms differ
+# in ALLOCATION only -- not in how hard the penalty pushes overall.
+arm: conditioned_physics
+loss:
+  constraints: [trend_alignment, temp_gated_trend, melt_response,
+                antecedent_wetness, adaptive_lag, volume_plausibility,
+                nonneg_monotone]
+  weighting: conditioned
+  lam: 0.001

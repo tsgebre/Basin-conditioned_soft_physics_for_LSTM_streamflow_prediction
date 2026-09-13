@@ -1,0 +1,28 @@
+# Shared hyperparameters. Arm files override the `loss` block only.
+
+data:
+  window_len: 365        # days of forcing fed to the LSTM
+  loss_days: 90          # only the last 90 are scored -- the first 275 warm up the state
+  train: ["1980-10-01", "2000-09-30"]
+  val:   ["2000-10-01", "2005-09-30"]
+  test:  ["2005-10-01", "2014-12-31"]
+  features: [prcp, tmax, tmin, srad, vp, dayl, doy_sin, doy_cos, pet, api14, swe]
+
+model:
+  hidden_dim: 256
+  dropout: 0.4
+
+optim:
+  lr: 1.0e-3
+  batch_size: 256
+  steps_per_epoch: 40
+  max_epochs: 100
+  patience: 10           # early stop on masked validation NSE
+  fixed_epochs: 30       # used when there are no validation labels left to stop on
+
+outage:
+  # Sensor failure is contiguous, not scattered: whole calendar blocks vanish.
+  # length_days: how long one outage lasts. missing: fraction of labels removed.
+  length_days: 30
+  missing: 0.5
+  seed: 20260904

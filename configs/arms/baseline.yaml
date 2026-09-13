@@ -1,0 +1,6 @@
+# No constraints. Just masked MSE. The thing everything else has to beat.
+arm: baseline
+loss:
+  constraints: []
+  weighting: none
+  lam: 0.0
