@@ -82,25 +82,6 @@ The paper replaced it with a degree-day SWE proxy (4.5 mm/°C/day); this code
 does not compute that proxy and uses whatever is in your `swe` column. If you
 pass CAMELS SWE as-is, the melt penalty never activates.
 
-## What this deliberately leaves out
-
-This is a simplified reference, not the screening pipeline, and it does not
-reproduce the paper's numbers. Not included:
-
-* the regional scope and its two learned-gate arms
-* the SWE degree-day proxy
-* the per-basin parameter conditioning: response-lag prior τ(b), wetness
-  horizon H(b), and mass-balance bound β(b). Here the lag window is fixed at
-  1-5 days, the wetness index is always 14 days, and the volume bound is a
-  constant 1.5 × water in
-* the frozen mask files and their SHA-256 manifest
-* the pre-registration machinery and integrity checks
-* the noise-floor calibration and bootstrap endpoint tests
-* the altered-forcing evaluation
-* the screening and descriptive readouts, and the figure-generation scripts
-If you want to reproduce the *finding* rather than train a model, the paper is
-the reference.
-
 ## Notes that will save you time
 
 * `--missing 1.0` removes every discharge label. Training still runs, because the
